@@ -10,6 +10,6 @@ publish:
 
 APPNAME=tryplan9front
 heroku:
-	heroku container:push web -a $(APPNAME)
+	docker tag mehlon/tryplan9 registry.heroku.com/$(APPNAME)/web
+	docker push registry.heroku.com/$(APPNAME)/web
 	heroku container:release web -a $(APPNAME)
-
